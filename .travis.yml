@@ -16,7 +16,9 @@ matrix:
   include:
     - perl: "blead"
       env: VERBOSE=1
-    - perl: "5.4.1"
+    - perl: "5.5.0"
+      env: VERBOSE=1
+    - perl: "5.5"
       env: VERBOSE=1
 before_install:
   - source ./init
