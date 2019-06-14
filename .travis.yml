@@ -2,19 +2,21 @@ language: perl
 perl:
   - "5.5.3"       # very ancient
   - "5.6.2"       # ancient
-  - "5.8.8"       # common, prebuilt version
-  - "5.8.8-thr"   # various build flags
-  - "5.8.8-mb"
-  - "5.8.8-dbg"
-  - "5.8.8@moo"   # with local::lib
-  - "5.17"        # older dev version
-  - "5.17.11"     # will never be prebuilt
-  - "5.18"        # existing perl version
-  - 5.20          # work around lack of quoting
-  - dev
+#  - "5.8.8"       # common, prebuilt version
+#  - "5.8.8-thr"   # various build flags
+#  - "5.8.8-mb"
+#  - "5.8.8-dbg"
+#  - "5.8.8@moo"   # with local::lib
+#  - "5.17"        # older dev version
+#  - "5.17.11"     # will never be prebuilt
+#  - "5.18"        # existing perl version
+#  - 5.20          # work around lack of quoting
+#  - dev
 matrix:
   include:
     - perl: "blead"
+      env: VERBOSE=1
+    - perl: "5.4.1"
       env: VERBOSE=1
 before_install:
   - source ./init
