@@ -48,6 +48,7 @@ function perlbrew_build {
   if [[ "$minor_version" =~ ^[0-5]$ ]]; then
     # Perl versions prior to 5.6 have version format 5.00X_YY
     rel_version="$(sed -n -E -e's/^5\.[0-9]\.//p' <<< "$brewver")"
+    [ "$rel_version" = "0" ] && rel_version=""
     [[ "$rel_version" =~ ^[0-9]$ ]] && rel_version="0$rel_version"
     [ -n "$rel_version" ] && rel_version="_$rel_version"
     brewver="5.00${minor_version}${rel_version}"
